@@ -363,7 +363,8 @@ p { margin: 0; }
 @media (max-width: 1024px) {
   .br-desk { display: none; }
   .hero-grid, .showcase, .showcase.reverse, .contact-grid, .contact-card { grid-template-columns: 1fr; gap: 48px; }
-  .contact-card { gap: 0; }
+  .contact-card { gap: 0; grid-template-columns: minmax(0, 1fr); }
+  .field input, .field select, .field textarea { min-width: 0; width: 100%; }
   .showcase.reverse .showcase-text { order: 0; }
   .hero-visual { max-width: 720px; }
 }
@@ -429,6 +430,14 @@ p { margin: 0; }
   .showcase-text h3 { font-size: 22px; }
   .showcase-text > p { font-size: 15px; }
   .hero { padding: 40px 0 56px; }
+  .hero-points { flex-direction: column; gap: 8px; }
+
+  /* Pied de page : liens sur 2 colonnes, bouton sur toute la largeur */
+  .site-footer { padding: 44px 0 24px; }
+  .footer-top { gap: 24px; }
+  .footer-nav { display: grid; grid-template-columns: 1fr 1fr; gap: 14px 24px; width: 100%; }
+  .footer-nav .footer-login { grid-column: 1 / -1; justify-content: center; margin: 6px 0 0; height: 44px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 10px; margin-top: 32px; }
   .grid-3, .steps, .compare { gap: 12px; }
 
   /* Cartes : icône à gauche du titre, marges réduites */
