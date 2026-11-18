@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Scoolea — La gestion des présences, simplement</title>
+  <meta name="description" content="Scoolea centralise la gestion des présences, des séances et du suivi administratif des formations : émargement électronique par QR code, absences, justificatifs, feuilles de présence et rapports d'assiduité." />
+  <link rel="canonical" href="https://scoolea.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Scoolea — La gestion des présences, simplement" />
+  <meta property="og:description" content="Séances, émargement électronique, absences, justificatifs, feuilles de présence et rapports d'assiduité, au même endroit." />
+  <meta property="og:url" content="https://scoolea.com/" />
+  <meta property="og:image" content="https://scoolea.com/assets/img/capture-tableau-de-bord.png" />
+  <meta name="theme-color" content="#0f1e3d" />
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/css/site.css" />
+</head>
+<body>
+
+<a class="sr-only" href="#contenu">Aller au contenu</a>
+
+<!-- ══ EN-TÊTE ══ -->
+<header class="site-header" id="haut">
+  <div class="container header-inner">
+    <a class="brand-link" href="/" aria-label="Scoolea, accueil">
+      <img src="/assets/img/logo-dark.png" alt="Scoolea" width="97" height="32" />
+    </a>
+    <nav class="main-nav" aria-label="Navigation principale">
+      <a href="#fonctionnement">Émargement</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#securite">Sécurité</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-ghost" href="https://app.scoolea.com/connexion">Se connecter</a>
+      <a class="btn btn-primary btn-sm" href="#contact">Demander une démonstration</a>
+    </div>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu-mobile" aria-label="Ouvrir le menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </div>
+  <nav class="mobile-nav" id="menu-mobile" aria-label="Navigation mobile">
+    <a href="#fonctionnement">Émargement</a>
+    <a href="#fonctionnalites">Fonctionnalités</a>
+    <a href="#securite">Sécurité</a>
+    <a href="#contact">Contact</a>
+    <a href="https://app.scoolea.com/connexion">Se connecter</a>
+    <a class="btn btn-primary" href="#contact">Demander une démonstration</a>
+  </nav>
+</header>
+
+<main id="contenu">
+
+  <!-- ══ HÉROS ══ -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="hero-badge"><span class="dot"></span>Gestion des présences et suivi administratif des formations</span>
+        <h1>La gestion des présences de vos formations, <span class="accent">simplement</span>.</h1>
+        <p class="hero-lead">
+          Séances, émargement par QR code, absences, justificatifs et feuilles de présence : Scoolea réunit
+          tout le suivi dans un outil clair, que vos équipes prennent en main sans formation complexe.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Demander une démonstration</a>
+          <a class="btn btn-secondary" href="#fonctionnalites">Voir les fonctionnalités</a>
+        </div>
+        <div class="hero-note">
+          <span>Rien à installer</span><span aria-hidden="true">·</span><span>Aucun compte étudiant</span><span aria-hidden="true">·</span><span>Démonstration de 20 min</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+          <img src="/assets/img/capture-tableau-de-bord.png" width="1440" height="900"
+               alt="Tableau de bord administrateur de Scoolea : séances du jour, présences et justificatifs en attente" />
+        </div>
+        <div class="phone">
+          <img src="/assets/img/capture-mobile.png" width="390" height="844"
+               alt="Écran d'émargement sur téléphone : l'étudiant signe au doigt" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PUBLIC ══ -->
+  <section class="audience" aria-label="Établissements concernés">
+    <div class="container audience-inner">
+      <span class="audience-label">Conçu pour</span>
+      <span class="audience-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10 12 5 2 10l10 5 10-5Z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></svg>Écoles supérieures</span>
+      <span class="audience-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>CFA et alternance</span>
+      <span class="audience-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V8l7-5 7 5v13"/><path d="M9 21v-6h6v6"/></svg>Organismes de formation</span>
+    </div>
+  </section>
+
+  <!-- ══ CONSTAT ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Le constat</span>
+        <h2 class="section-title">Un suivi administratif dispersé coûte du temps à tout le monde</h2>
+        <p class="section-lead">Feuilles papier, tableurs et e-mails : à chaque séance, les mêmes tâches reviennent.</p>
+      </div>
+      <div class="compare">
+        <div class="compare-col before">
+          <h3>Sur papier <span class="tag">Aujourd'hui</span></h3>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Des feuilles d'émargement à faire circuler, puis à ressaisir et à archiver.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Des signatures manquantes et des absences découvertes trop tard.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg><span>Des justificatifs et des taux de présence suivis à la main, dans plusieurs fichiers.</span></li>
+          </ul>
+        </div>
+        <div class="compare-col with">
+          <h3>Avec Scoolea <span class="tag">Demain</span></h3>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Les étudiants signent sur leur téléphone, la présence est enregistrée immédiatement.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Absences, signatures manquantes et justificatifs sont suivis au même endroit.</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Les feuilles de présence et les rapports d'assiduité sont générés automatiquement.</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FONCTIONNEMENT ══ -->
+  <section class="section section-alt" id="fonctionnement">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Émargement électronique</span>
+        <h2 class="section-title">L'émargement en trois étapes, à chaque séance</h2>
+        <p class="section-lead">Ni matériel ni application à installer : un écran pour l'intervenant, le téléphone de l'étudiant, et les présences arrivent directement dans le suivi administratif.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>L'intervenant ouvre la séance</h3>
+          <p>Depuis son espace, il retrouve sa séance du jour et affiche le QR code au début du cours.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Les étudiants signent sur leur téléphone</h3>
+          <p>Chaque étudiant scanne le QR code avec son téléphone, activé une seule fois, et signe au doigt. Sa présence est enregistrée immédiatement.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>L'administration récupère la feuille</h3>
+          <p>Présences, absences et signatures sont centralisées. L'administration retrouve les informations de la séance et sa feuille de présence en PDF, signatures comprises.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FONCTIONNALITÉS ══ -->
+  <section class="section" id="fonctionnalites">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Fonctionnalités</span>
+        <h2 class="section-title">Le suivi administratif de vos formations, de bout en bout</h2>
+        <p class="section-lead">De la planification des séances jusqu'aux rapports d'assiduité, dans des écrans volontairement épurés.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14v.01M14 20h.01M17 20h4v-3"/></svg></div>
+          <h3>Émargement électronique</h3>
+          <p>Un QR code par séance, une signature au doigt sur le téléphone de l'étudiant. Les étudiants n'ont ni compte ni mot de passe à retenir.</p>
+        </article>
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+          <h3>Gestion des séances</h3>
+          <p>Planification par classe, matière et intervenant, avec horaires et salle. Une séance annulée peut être rétablie.</p>
+        </article>
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="m16 11 2 2 4-4"/></svg></div>
+          <h3>Présences et absences</h3>
+          <p>Suivi de chaque séance, corrections après coup et régularisation des signatures manquantes par un lien à usage unique.</p>
+        </article>
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg></div>
+          <h3>Justificatifs</h3>
+          <p>L'étudiant dépose son justificatif depuis un lien reçu par e-mail. L'administration l'accepte ou le refuse, avec un motif.</p>
+        </article>
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M12 18v-6M9 15l3 3 3-3"/></svg></div>
+          <h3>Feuilles de présence</h3>
+          <p>Feuilles d'émargement générées automatiquement en PDF, signatures comprises, prêtes à archiver ou à transmettre.</p>
+        </article>
+        <article class="card card-compact">
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg></div>
+          <h3>Rapports d'assiduité</h3>
+          <p>Taux de présence sur la période, absences par séance, comparaison entre classes et suivi des justificatifs.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROFILS ══ -->
+  <section class="section section-alt" id="espaces">
+    <div class="container">
+      <div class="section-head center">
+        <span class="eyebrow">Une plateforme, trois usages</span>
+        <h2 class="section-title">Un outil simple pour l'administration, les intervenants et les étudiants</h2>
+        <p class="section-lead">Chacun ne voit que ce dont il a besoin. L'administration et les intervenants ont leur propre espace ; les étudiants n'ont pas de compte et émargent depuis leur téléphone.</p>
+      </div>
+      <div class="grid-3">
+        <article class="card role">
+          <div class="role-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="9" rx="1"/><rect x="14" y="3" width="7" height="5" rx="1"/><rect x="14" y="12" width="7" height="9" rx="1"/><rect x="3" y="16" width="7" height="5" rx="1"/></svg></div>
+            <div><h3>Administration</h3><p class="role-sub">Tout le suivi, depuis un tableau de bord</p></div>
+          </div>
+          <ul>
+            <li>Étudiants, intervenants, formations, classes et matières</li>
+            <li>Planification des séances</li>
+            <li>Absences et validation des justificatifs</li>
+            <li>Feuilles de présence et rapports d'assiduité</li>
+            <li>Import des étudiants depuis Excel</li>
+          </ul>
+        </article>
+        <article class="card role">
+          <div class="role-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+            <div><h3>Intervenants</h3><p class="role-sub">Uniquement leurs séances et leurs classes</p></div>
+          </div>
+          <ul>
+            <li>Consultation des séances et des classes</li>
+            <li>Ouverture de la séance et affichage du QR code</li>
+            <li>Suivi des présences et gestion de l'appel</li>
+            <li>Corrections après la séance, puis clôture</li>
+          </ul>
+        </article>
+        <article class="card role">
+          <div class="role-head">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="2.5"/><path d="M11 18h2"/></svg></div>
+            <div><h3>Étudiants</h3><p class="role-sub">Rien à installer</p></div>
+          </div>
+          <ul>
+            <li>Aucun compte ni mot de passe à gérer</li>
+            <li>Émargement depuis leur téléphone activé</li>
+            <li>Dépôt des justificatifs par un lien sécurisé</li>
+            <li>Notifications par e-mail</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ APERÇU DE L'APPLICATION ══ -->
+  <section class="section">
+    <div class="container">
+      <div class="showcase">
+        <div class="showcase-text">
+          <span class="eyebrow">Chaque séance</span>
+          <h3>Les présences d'une séance, d'un seul coup d'œil</h3>
+          <p>Pour chaque séance, l'administration et l'intervenant voient la liste des étudiants, leur statut et leur signature.</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Présents et absents, mis à jour pendant la séance</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Corrections possibles après la séance, avec une trace de qui a validé</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Feuille d'émargement en PDF en un clic</span></li>
+          </ul>
+        </div>
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+          <img src="/assets/img/capture-seance.png" width="1440" height="900" loading="lazy"
+               alt="Détail d'une séance dans Scoolea : liste des étudiants, statut de présence et signatures" />
+        </div>
+      </div>
+
+      <div class="showcase reverse">
+        <div class="showcase-text">
+          <span class="eyebrow">Absences</span>
+          <h3>Des justificatifs traités sans échanges d'e-mails</h3>
+          <p>Les justificatifs déposés par les étudiants arrivent dans une liste unique, avec le document et la séance concernée.</p>
+          <ul class="check-list">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Acceptation ou refus motivé, l'étudiant est prévenu par e-mail</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Recherche par étudiant, classe ou statut</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Suivi des justificatifs dans les rapports</span></li>
+          </ul>
+        </div>
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+          <img src="/assets/img/capture-justificatifs.png" width="1440" height="900" loading="lazy"
+               alt="Liste des justificatifs d'absence dans Scoolea, avec leur statut et les actions Accepter ou Refuser" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SÉCURITÉ ══ -->
+  <section class="section security" id="securite">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow">Sécurité et données</span>
+        <h2 class="section-title">Des données protégées, des accès maîtrisés</h2>
+        <p class="section-lead">Les présences et les justificatifs de vos étudiants sont des données sensibles. Scoolea est conçu en conséquence.</p>
+      </div>
+      <div class="sec-grid">
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg>
+          <h3>Accès par rôle</h3>
+          <p>L'administration et les intervenants disposent chacun de droits distincts. Les étudiants, sans compte, n'accèdent qu'à leur propre émargement et à leurs liens personnels.</p>
+        </div>
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3>Comptes protégés</h3>
+          <p>Mots de passe jamais stockés en clair, connexion protégée contre les tentatives répétées.</p>
+        </div>
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><rect x="8" y="13" width="8" height="5" rx="1"/></svg>
+          <h3>Documents privés</h3>
+          <p>Justificatifs et feuilles de présence sont conservés dans un espace de stockage privé, accessible uniquement par l'application.</p>
+        </div>
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>
+          <h3>Liens personnels</h3>
+          <p>Les liens de signature envoyés par e-mail sont personnels et à usage unique.</p>
+        </div>
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>
+          <h3>Connexions chiffrées</h3>
+          <p>Toutes les communications avec Scoolea passent par des connexions chiffrées (HTTPS).</p>
+        </div>
+        <div class="sec-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M5 4h14v16H5z"/></svg>
+          <h3>Traçabilité</h3>
+          <p>Les validations et corrections de présence, comme les décisions sur les justificatifs, sont enregistrées avec leur auteur et leur date.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section class="section" id="contact">
+    <div class="container contact-grid">
+      <div>
+        <span class="eyebrow">Contact</span>
+        <h2 class="section-title">Voyons ensemble si Scoolea convient à votre établissement</h2>
+        <p class="section-lead">Laissez-nous vos coordonnées : nous vous présentons l'application sur un exemple concret, adapté à votre organisation.</p>
+        <ol class="next-steps">
+          <li><span class="n">1</span><div><strong>Nous vous recontactons</strong><p>Pour comprendre votre fonctionnement actuel et convenir d'un créneau.</p></div></li>
+          <li><span class="n">2</span><div><strong>Démonstration de 20 minutes</strong><p>En visioconférence, sur des données fictives.</p></div></li>
+          <li><span class="n">3</span><div><strong>Mise en place accompagnée</strong><p>Nous importons avec vous vos étudiants depuis un fichier Excel, puis présentons l'outil à vos intervenants. Aucun logiciel à déployer.</p></div></li>
+        </ol>
+      </div>
+
+      <div class="form-card">
+        <form id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-nom">Nom et prénom <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-nom" name="nom" type="text" autocomplete="name" required maxlength="100" />
+            </div>
+            <div class="field">
+              <label for="f-etab">Établissement <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-etab" name="etablissement" type="text" autocomplete="organization" required maxlength="150" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-email">E-mail professionnel <span class="req" aria-hidden="true">*</span></label>
+              <input id="f-email" name="email" type="email" autocomplete="email" inputmode="email" required maxlength="150" />
+            </div>
+            <div class="field">
+              <label for="f-tel">Téléphone <span class="opt">(optionnel)</span></label>
+              <input id="f-tel" name="telephone" type="tel" autocomplete="tel" maxlength="30" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="field">
+              <label for="f-fonction">Fonction</label>
+              <select id="f-fonction" name="fonction">
+                <option value="">Choisir…</option>
+                <option>Direction</option>
+                <option>Responsable pédagogique</option>
+                <option>Scolarité / administration</option>
+                <option>Responsable qualité</option>
+                <option>Autre</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="f-taille">Nombre d'apprenants</label>
+              <select id="f-taille" name="apprenants">
+                <option value="">Choisir…</option>
+                <option>Moins de 100</option>
+                <option>De 100 à 300</option>
+                <option>De 300 à 1 000</option>
+                <option>Plus de 1 000</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-message">Message <span class="opt">(optionnel)</span></label>
+            <textarea id="f-message" name="message" maxlength="2000" placeholder="Votre organisation actuelle, vos questions…"></textarea>
+          </div>
+          <!-- Champ piège pour les robots : invisible pour les visiteurs -->
+          <div class="hp" aria-hidden="true">
+            <label for="f-site">Site web</label>
+            <input id="f-site" name="site_web" type="text" tabindex="-1" autocomplete="off" />
+          </div>
+          <p class="form-legal">
+            Vos informations servent uniquement à répondre à votre demande.
+            Voir notre <a href="/confidentialite.html">politique de confidentialité</a>.
+          </p>
+          <button class="btn btn-primary form-submit" type="submit">Demander une démonstration</button>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+        <div class="form-done" hidden>
+          <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+          <h3>Merci, votre demande est envoyée</h3>
+          <p>Nous revenons vers vous rapidement pour convenir d'un créneau de démonstration.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ══ PIED DE PAGE ══ -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="/assets/img/logo-light.png" alt="Scoolea" width="91" height="30" loading="lazy" />
+        <p>La gestion des présences et le suivi administratif des formations, simplement. Pour les écoles, les CFA et les organismes de formation.</p>
+      </div>
+      <div>
+        <h4>Produit</h4>
+        <ul>
+          <li><a href="/#fonctionnement">Émargement</a></li>
+          <li><a href="/#fonctionnalites">Fonctionnalités</a></li>
+          <li><a href="/#securite">Sécurité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Scoolea</h4>
+        <ul>
+          <li><a href="/#contact">Contact</a></li>
+          <li><a href="/mentions-legales.html">Mentions légales</a></li>
+          <li><a href="/confidentialite.html">Confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Accès</h4>
+        <ul>
+          <li><a href="https://app.scoolea.com/connexion">Se connecter</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span data-year>2026</span> Scoolea. Tous droits réservés.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>
