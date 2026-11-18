@@ -248,6 +248,22 @@ p { margin: 0; }
 .showcase-text .check-list { margin-top: 24px; }
 .showcase-text .check-list svg { color: var(--brand); }
 
+/* Feuille d'émargement présentée comme un document */
+.paper {
+  position: relative; margin: 0; padding: 28px 28px 0; background: #fff; border: 1px solid var(--line);
+  border-radius: 6px; box-shadow: 0 24px 48px -24px rgba(15, 23, 42, .35), 0 2px 6px rgba(15, 23, 42, .06);
+  max-height: 560px; overflow: hidden;
+}
+.paper img { display: block; width: 100%; height: auto; }
+.paper::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+  background: linear-gradient(rgba(255, 255, 255, 0), #fff);
+}
+.paper-badge {
+  position: absolute; top: 12px; right: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .06em;
+  color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 3px 8px;
+}
+
 /* Profils */
 .role { display: flex; flex-direction: column; }
 .role-head { display: flex; flex-direction: column; align-items: flex-start; gap: 18px; margin-bottom: 18px; }
@@ -504,7 +520,7 @@ p { margin: 0; }
   .check-list li { font-size: 14.5px; }
 
   /* Captures de l'application : illisibles sur petit écran, on garde le texte */
-  .showcase > .browser { display: none; }
+  .showcase > .browser, .showcase > .paper { display: none; }
   .showcase + .showcase { margin-top: 48px; }
 
   /* Barre « Demander une démonstration » fixe en bas de l'écran */

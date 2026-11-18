@@ -20,7 +20,7 @@
     document.documentElement.classList.add('anim');
     var groups = [
       '.section-head', '.compare-col', '.grid-3 > *', '.steps > .step', '.showcase-text',
-      '.showcase > .browser', '.sec-item', '.price-card', '.contact-card', '.audience-item'
+      '.showcase > .browser', '.showcase > .paper', '.sec-item', '.price-card', '.contact-card', '.audience-item'
     ];
     var targets = [];
     groups.forEach(function (sel) {
