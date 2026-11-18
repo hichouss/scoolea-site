@@ -69,6 +69,21 @@
     watch(document.querySelector('.site-footer'), 'footer');
   }
 
+  // Menu : souligne la section en cours de lecture
+  var navLinks = Array.prototype.slice.call(document.querySelectorAll('.main-nav a[href^="#"]'));
+  if (navLinks.length && 'IntersectionObserver' in window) {
+    var byId = {};
+    navLinks.forEach(function (a) { byId[a.getAttribute('href').slice(1)] = a; });
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        navLinks.forEach(function (a) { a.classList.remove('active'); });
+        if (byId[e.target.id]) byId[e.target.id].classList.add('active');
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+  }
+
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('menu-mobile');
