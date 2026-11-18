@@ -13,6 +13,39 @@
     onScroll();
   }
 
+  // Animations d'apparition : sobres, désactivées si l'utilisateur préfère réduire les animations.
+  // Sans JavaScript (ou sans IntersectionObserver), tout reste visible.
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce && 'IntersectionObserver' in window) {
+    document.documentElement.classList.add('anim');
+    var groups = [
+      '.section-head', '.compare-col', '.grid-3 > *', '.steps > .step', '.showcase-text',
+      '.showcase > .browser', '.sec-item', '.price-card', '.contact-card', '.audience-item'
+    ];
+    var targets = [];
+    groups.forEach(function (sel) {
+      document.querySelectorAll(sel).forEach(function (el) {
+        if (el.closest('.hero')) return;
+        // Décalage progressif entre les éléments frères d'une même grille
+        var i = Array.prototype.indexOf.call(el.parentNode.children, el);
+        el.style.setProperty('--d', (Math.min(i, 5) * 80) + 'ms');
+        el.classList.add('reveal');
+        targets.push(el);
+      });
+    });
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        el.classList.add('in');
+        io.unobserve(el);
+        // Une fois apparu, l'élément retrouve ses transitions normales (survol sans délai)
+        setTimeout(function () { el.classList.remove('reveal', 'in'); el.style.removeProperty('--d'); }, 1200);
+      });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+    targets.forEach(function (el) { io.observe(el); });
+  }
+
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('menu-mobile');
