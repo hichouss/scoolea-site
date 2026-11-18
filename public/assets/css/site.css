@@ -419,6 +419,47 @@ p { margin: 0; }
 .showcase .browser img { transition: transform .6s ease; }
 .showcase .browser:hover img { transform: scale(1.015); }
 
+/* ── Mobile : version compacte (sous 640 px uniquement) ───────── */
+.mobile-cta { display: none; }
+@media (max-width: 640px) {
+  .section { padding: 64px 0; }
+  .section-head { margin-bottom: 32px; }
+  .section-title { font-size: 25px; line-height: 1.2; }
+  .section-lead { font-size: 15px; margin-top: 12px; }
+  .showcase-text h3 { font-size: 22px; }
+  .showcase-text > p { font-size: 15px; }
+  .hero { padding: 40px 0 56px; }
+  .grid-3, .steps, .compare { gap: 12px; }
+
+  /* Cartes : icône à gauche du titre, marges réduites */
+  .card, .step, .compare-col { padding: 20px; }
+  .card-compact, .step { display: grid; grid-template-columns: 40px 1fr; column-gap: 14px; align-items: start; }
+  .card-compact .icon-box, .step .step-num { grid-row: span 2; margin: 0; }
+  .card-compact h3, .step h3 { margin: 2px 0 4px; font-size: 16px; }
+  .card-compact p, .step p { font-size: 14.5px; }
+  .role-head { flex-direction: row; align-items: center; gap: 14px; margin-bottom: 14px; }
+  .role-head .icon-box { margin: 0; flex: none; }
+  .role li { font-size: 14.5px; }
+  .compare-col h3 { margin-bottom: 14px; }
+  .check-list { gap: 10px; }
+  .check-list li { font-size: 14.5px; }
+
+  /* Captures de l'application : illisibles sur petit écran, on garde le texte */
+  .showcase > .browser { display: none; }
+  .showcase + .showcase { margin-top: 48px; }
+
+  /* Barre « Demander une démonstration » fixe en bas de l'écran */
+  .mobile-cta {
+    display: block; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+    padding: 12px 16px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, .94); backdrop-filter: blur(8px);
+    border-top: 1px solid var(--line); box-shadow: 0 -6px 20px -12px rgba(15, 23, 42, .25);
+    transform: translateY(110%); transition: transform .25s ease;
+  }
+  .mobile-cta .btn { width: 100%; }
+  .mobile-cta.show { transform: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition: none !important; animation: none !important; }

@@ -46,6 +46,29 @@
     targets.forEach(function (el) { io.observe(el); });
   }
 
+  // Barre d'action mobile : visible après le héros, masquée sur le formulaire et le pied de page
+  var cta = document.querySelector('.mobile-cta');
+  var heroActions = document.querySelector('.hero-actions');
+  if (cta && heroActions && 'IntersectionObserver' in window) {
+    var seen = { hero: true, contact: false, footer: false };
+    var update = function () {
+      var show = !seen.hero && !seen.contact && !seen.footer;
+      cta.classList.toggle('show', show);
+      cta.setAttribute('aria-hidden', String(!show));
+      cta.querySelector('a').tabIndex = show ? 0 : -1;
+    };
+    var watch = function (el, key) {
+      if (!el) return;
+      new IntersectionObserver(function (entries) {
+        seen[key] = entries[0].isIntersecting;
+        update();
+      }).observe(el);
+    };
+    watch(heroActions, 'hero');
+    watch(document.getElementById('contact'), 'contact');
+    watch(document.querySelector('.site-footer'), 'footer');
+  }
+
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
   var menu = document.getElementById('menu-mobile');
