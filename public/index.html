@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Scoolea — La gestion des présences, simplement</title>
+  <title>Scoolea — L'émargement de vos formations, sans papier</title>
   <meta name="description" content="Scoolea centralise la gestion des présences, des séances et du suivi administratif des formations : émargement numérique par QR code, absences, justificatifs, feuilles de présence et rapports d'assiduité." />
   <link rel="canonical" href="https://scoolea.com/" />
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Scoolea — La gestion des présences, simplement" />
+  <meta property="og:title" content="Scoolea — L'émargement de vos formations, sans papier" />
   <meta property="og:description" content="Séances, émargement numérique, absences, justificatifs, feuilles de présence et rapports d'assiduité, au même endroit." />
   <meta property="og:url" content="https://scoolea.com/" />
   <meta property="og:image" content="https://scoolea.com/assets/img/capture-tableau-de-bord.png?v=1573aad0" />
@@ -16,7 +16,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
   <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
   <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="/assets/css/site.css?v=2644e559" />
+  <link rel="stylesheet" href="/assets/css/site.css?v=32ae170e" />
 </head>
 <body>
 
@@ -61,10 +61,10 @@
     <div class="container hero-grid">
       <div>
         <span class="eyebrow hero-eyebrow">Gestion des présences, feuilles de présence et suivi administratif</span>
-        <h1>La gestion des présences <br class="br-desk" />de vos formations, <br class="br-desk" /><span class="accent">simplement.</span></h1>
+        <h1>L'émargement <br class="br-desk" />de vos formations, <br class="br-desk" /><span class="accent">sans papier.</span></h1>
         <p class="hero-lead">
-          Séances, émargement par QR code, absences, justificatifs et feuilles de présence : Scoolea réunit
-          tout le suivi dans un outil clair, que vos équipes prennent en main sans formation complexe.
+          Les étudiants signent sur leur téléphone, les feuilles d'émargement sont générées en PDF,
+          et l'administration suit présences et absences au même endroit.
         </p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#contact">Demander une démonstration</a>
@@ -200,78 +200,94 @@
     </div>
   </section>
 
-  <!-- ══ APERÇU DE L'APPLICATION ══ -->
-  <section class="section section-alt">
+  <!-- ══ APERÇU DE L'APPLICATION (onglets) ══ -->
+  <section class="section section-alt" id="apercu" aria-labelledby="apercu-titre">
     <div class="container">
-      <div class="showcase">
-        <div class="showcase-text">
-          <span class="eyebrow">Planning</span>
-          <h3>Toutes les séances de la semaine, en un coup d'œil</h3>
-          <p>Planifiez les séances par classe, matière et intervenant, puis suivez-les dans une vue jour, semaine ou liste.</p>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Vues jour, semaine et liste</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Import du planning depuis Excel</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Séances annulées signalées, et rétablies si besoin</span></li>
-          </ul>
-        </div>
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
-          <img src="/assets/img/capture-planning.png?v=83cdadb2" width="1600" height="1000" loading="lazy"
-               alt="Planning hebdomadaire des séances dans Scoolea : matières, classes et intervenants" />
-        </div>
+      <div class="section-head center">
+        <span class="eyebrow">Aperçu de l'application</span>
+        <h2 class="section-title" id="apercu-titre">Scoolea au quotidien</h2>
       </div>
-
-      <div class="showcase reverse">
-        <div class="showcase-text">
-          <span class="eyebrow">Feuilles d'émargement</span>
-          <h3>Des feuilles d'émargement signées, prêtes à archiver</h3>
-          <p>À la fin de chaque séance, Scoolea génère la feuille d'émargement en PDF, avec la signature de chaque étudiant.</p>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Signatures des étudiants et de l'intervenant</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Feuilles par séance, par journée ou par période</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Relevés d'assiduité et attestations par étudiant</span></li>
-          </ul>
+      <div class="ftabs" data-ftabs>
+        <div class="ftabs-bar">
+          <div class="ftabs-list" role="tablist" aria-label="Fonctionnalités de Scoolea">
+          <button class="ftab" type="button" role="tab" id="ftab-emargement" aria-controls="fpanel-emargement" aria-selected="true" tabindex="0">Émargement</button>
+          <button class="ftab" type="button" role="tab" id="ftab-presences" aria-controls="fpanel-presences" aria-selected="false" tabindex="-1">Présences</button>
+          <button class="ftab" type="button" role="tab" id="ftab-justificatifs" aria-controls="fpanel-justificatifs" aria-selected="false" tabindex="-1">Justificatifs</button>
+          <button class="ftab" type="button" role="tab" id="ftab-planning" aria-controls="fpanel-planning" aria-selected="false" tabindex="-1">Planning</button>
+          </div>
+          <div class="ftabs-nav">
+            <button class="ftabs-arrow" type="button" data-ftabs-prev aria-label="Fonctionnalité précédente"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></button>
+            <button class="ftabs-arrow" type="button" data-ftabs-next aria-label="Fonctionnalité suivante"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg></button>
+          </div>
         </div>
-        <figure class="paper">
-          <span class="paper-badge">PDF</span>
-          <img src="/assets/img/capture-feuille.png?v=51589273" width="1256" height="1363" loading="lazy"
-               alt="Feuille d'émargement générée par Scoolea : informations de la séance et signature de chaque étudiant" />
-        </figure>
-      </div>
-
-      <div class="showcase">
-        <div class="showcase-text">
-          <span class="eyebrow">Chaque séance</span>
-          <h3>Les présences d'une séance, d'un seul coup d'œil</h3>
-          <p>Pour chaque séance, l'administration et l'intervenant voient la liste des étudiants, leur statut et leur signature.</p>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Présents et absents, mis à jour pendant la séance</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Corrections possibles après la séance, avec une trace de qui a validé</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Feuille d'émargement en PDF en un clic</span></li>
-          </ul>
+        <div class="ftabs-panels">
+        <div class="fpanel is-active" role="tabpanel" id="fpanel-emargement" aria-labelledby="ftab-emargement" tabindex="0">
+          <div class="fpanel-text">
+            <h3>Des feuilles d'émargement signées, prêtes à archiver</h3>
+            <p>À la fin de chaque séance, Scoolea génère la feuille d'émargement en PDF, avec la signature de chaque étudiant.</p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Signatures des étudiants et de l'intervenant</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Feuilles par séance, par journée ou par période</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Relevés d'assiduité et attestations par étudiant</span></li>
+            </ul>
+          </div>
+          <div class="fpanel-media">
+            <figure class="paper">
+              <img src="/assets/img/capture-feuille.png?v=51589273" width="1256" height="1363" loading="lazy" alt="Feuille d'émargement générée par Scoolea : informations de la séance et signature de chaque étudiant" />
+            </figure>
+          </div>
         </div>
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
-          <img src="/assets/img/capture-seance.png?v=21dfae31" width="1440" height="900" loading="lazy"
-               alt="Détail d'une séance dans Scoolea : liste des étudiants, statut de présence et signatures" />
+        <div class="fpanel" role="tabpanel" id="fpanel-presences" aria-labelledby="ftab-presences" tabindex="0" aria-hidden="true" inert>
+          <div class="fpanel-text">
+            <h3>Les présences d'une séance, d'un seul coup d'œil</h3>
+            <p>Pour chaque séance, l'administration et l'intervenant voient la liste des étudiants, leur statut et leur signature.</p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Présents et absents, mis à jour pendant la séance</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Corrections possibles après la séance, avec une trace de qui a validé</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Feuille d'émargement en PDF en un clic</span></li>
+            </ul>
+          </div>
+          <div class="fpanel-media">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+              <img src="/assets/img/capture-seance.png?v=21dfae31" width="1440" height="900" loading="lazy" alt="Détail d'une séance dans Scoolea : liste des étudiants, statut de présence et signatures" />
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="showcase reverse">
-        <div class="showcase-text">
-          <span class="eyebrow">Absences</span>
-          <h3>Des justificatifs traités sans échanges d'e-mails</h3>
-          <p>Les justificatifs déposés par les étudiants arrivent dans une liste unique, avec le document et la séance concernée.</p>
-          <ul class="check-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Acceptation ou refus motivé, l'étudiant est prévenu par e-mail</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Recherche par étudiant, classe ou statut</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Suivi des justificatifs dans les rapports</span></li>
-          </ul>
+        <div class="fpanel" role="tabpanel" id="fpanel-justificatifs" aria-labelledby="ftab-justificatifs" tabindex="0" aria-hidden="true" inert>
+          <div class="fpanel-text">
+            <h3>Des justificatifs traités sans échanges d'e-mails</h3>
+            <p>Les justificatifs déposés par les étudiants arrivent dans une liste unique, avec le document et la séance concernée.</p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Acceptation ou refus motivé, l'étudiant est prévenu par e-mail</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Recherche par étudiant, classe ou statut</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Suivi des justificatifs dans les rapports</span></li>
+            </ul>
+          </div>
+          <div class="fpanel-media">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+              <img src="/assets/img/capture-justificatifs.png?v=dd0e85b9" width="1440" height="900" loading="lazy" alt="Liste des justificatifs d'absence dans Scoolea, avec leur statut et les actions Accepter ou Refuser" />
+            </div>
+          </div>
         </div>
-        <div class="browser">
-          <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
-          <img src="/assets/img/capture-justificatifs.png?v=dd0e85b9" width="1440" height="900" loading="lazy"
-               alt="Liste des justificatifs d'absence dans Scoolea, avec leur statut et les actions Accepter ou Refuser" />
+        <div class="fpanel" role="tabpanel" id="fpanel-planning" aria-labelledby="ftab-planning" tabindex="0" aria-hidden="true" inert>
+          <div class="fpanel-text">
+            <h3>Toutes les séances de la semaine, en un coup d'œil</h3>
+            <p>Planifiez les séances par classe, matière et intervenant, puis suivez-les dans une vue jour, semaine ou liste.</p>
+            <ul class="check-list">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Vues jour, semaine et liste</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Import du planning depuis Excel</span></li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span>Séances annulées signalées, et rétablies si besoin</span></li>
+            </ul>
+          </div>
+          <div class="fpanel-media">
+            <div class="browser">
+              <div class="browser-bar"><i></i><i></i><i></i><span class="url">app.scoolea.com</span></div>
+              <img src="/assets/img/capture-planning.png?v=83cdadb2" width="1600" height="1000" loading="lazy" alt="Planning hebdomadaire des séances dans Scoolea : matières, classes et intervenants" />
+            </div>
+          </div>
+        </div>
         </div>
       </div>
     </div>
@@ -500,6 +516,6 @@
   <a class="btn btn-primary" href="#contact" tabindex="-1">Demander une démonstration</a>
 </div>
 
-<script src="/assets/js/site.js?v=3527d922" defer></script>
+<script src="/assets/js/site.js?v=c8c60b89" defer></script>
 </body>
 </html>

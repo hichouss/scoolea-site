@@ -259,9 +259,74 @@ p { margin: 0; }
   content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
   background: linear-gradient(rgba(255, 255, 255, 0), #fff);
 }
-.paper-badge {
-  position: absolute; top: 12px; right: 12px; z-index: 1; font-size: 11px; font-weight: 700; letter-spacing: .06em;
-  color: #b91c1c; background: #fef2f2; border: 1px solid #fecaca; border-radius: 6px; padding: 3px 8px;
+
+/* ── Aperçu : quatre fonctionnalités en onglets ───────── */
+.ftabs-bar { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); margin-bottom: 40px; }
+.ftabs-list { display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.ftabs-list::-webkit-scrollbar { display: none; }
+.ftab {
+  position: relative; flex: none; background: none; border: 0; padding: 12px 16px 14px; cursor: pointer;
+  font: inherit; font-size: 15px; font-weight: 600; color: var(--muted); transition: color .2s;
+}
+.ftab::after {
+  content: ''; position: absolute; left: 12px; right: 12px; bottom: 0; height: 2px; border-radius: 2px;
+  background: var(--brand); transform: scaleX(0); transition: transform .25s ease;
+}
+.ftab:hover, .ftab[aria-selected="true"] { color: var(--ink); }
+.ftab[aria-selected="true"]::after { transform: scaleX(1); }
+.ftab:focus-visible, .ftabs-arrow:focus-visible, .fpanel:focus-visible { outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 6px; }
+.ftabs-nav { display: flex; gap: 8px; padding-bottom: 8px; }
+.ftabs-arrow {
+  width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+  background: #fff; border: 1px solid var(--line); border-radius: 50%; color: var(--ink-2); transition: border-color .15s, color .15s;
+}
+.ftabs-arrow:hover { border-color: #cbd5e1; color: var(--brand); }
+.ftabs-arrow svg { width: 18px; height: 18px; }
+
+/* Sans JavaScript : pas d'onglets, les quatre panneaux s'affichent l'un sous l'autre */
+.ftabs:not(.is-ready) .ftabs-bar { display: none; }
+.ftabs:not(.is-ready) .fpanel + .fpanel { margin-top: 64px; }
+
+.fpanel { display: grid; grid-template-columns: 1fr 1.6fr; gap: 56px; align-items: center; }
+.fpanel-text h3 { font-size: clamp(22px, 2.3vw, 28px); font-weight: 700; color: var(--ink); line-height: 1.25; }
+.fpanel-text > p { margin-top: 14px; color: var(--muted); font-size: 16px; line-height: 1.6; }
+.fpanel-text .check-list { margin-top: 22px; }
+.fpanel-text .check-list svg { color: var(--brand); }
+.fpanel-media .browser, .fpanel-media .paper { margin: 0; }
+/* La feuille prend le même format que les captures d'écran */
+.fpanel-media .paper { max-height: none; width: 64%; aspect-ratio: 1 / 1; margin: 0 auto; padding: 20px 20px 0; }
+
+/* Avec JavaScript : panneaux superposés ; la zone garde la hauteur du plus grand, la page ne saute pas */
+.ftabs.is-ready .ftabs-panels { display: grid; touch-action: pan-y; }
+.ftabs.is-ready .fpanel {
+  grid-area: 1 / 1; opacity: 0; visibility: hidden; transform: translateX(var(--from, 40px));
+  transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
+}
+.ftabs.is-ready .fpanel.is-active {
+  opacity: 1; visibility: visible; transform: none;
+  transition: opacity .35s ease, transform .35s ease, visibility 0s;
+}
+.ftabs.is-ready .fpanel.is-leaving { transform: translateX(var(--to, -40px)); }
+
+@media (max-width: 1024px) {
+  .fpanel { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 640px) {
+  .ftabs-bar { margin: 0 -16px 28px; padding: 0 16px; }
+  .ftabs-nav { display: none; }
+  .ftabs-list { gap: 0; width: 100%; justify-content: space-between; }
+  .ftab { padding: 10px 6px 12px; font-size: 14px; }
+  .ftab::after { left: 4px; right: 4px; }
+  .fpanel-text h3 { font-size: 21px; }
+  .fpanel-text > p { font-size: 15px; }
+  .fpanel-media .paper { width: 82%; padding: 12px 12px 0; }
+}
+/* Animations réduites : le glissement est conservé mais plus court (16 px) */
+@media (prefers-reduced-motion: reduce) {
+  .ftabs.is-ready .fpanel { transform: translateX(calc(var(--from, 40px) * .4)); transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s !important; }
+  .ftabs.is-ready .fpanel.is-active { transform: none; transition: opacity .35s ease, transform .35s ease, visibility 0s !important; }
+  .ftabs.is-ready .fpanel.is-leaving { transform: translateX(calc(var(--to, -40px) * .4)); }
+  .ftab::after { transition: transform .25s ease !important; }
 }
 
 /* Profils */

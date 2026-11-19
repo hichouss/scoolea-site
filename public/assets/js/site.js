@@ -19,8 +19,7 @@
   if (!reduce && 'IntersectionObserver' in window) {
     document.documentElement.classList.add('anim');
     var groups = [
-      '.section-head', '.compare-col', '.grid-3 > *', '.steps > .step', '.showcase-text',
-      '.showcase > .browser', '.showcase > .paper', '.sec-item', '.price-card', '.contact-card', '.audience-item'
+      '.section-head', '.compare-col', '.grid-3 > *', '.steps > .step', '.ftabs', '.sec-item', '.price-card', '.contact-card', '.audience-item'
     ];
     var targets = [];
     groups.forEach(function (sel) {
@@ -81,8 +80,84 @@
         if (byId[e.target.id]) byId[e.target.id].classList.add('active');
       });
     }, { rootMargin: '-45% 0px -50% 0px' });
-    Object.keys(byId).forEach(function (id) { var el = document.getElementById(id); if (el) spy.observe(el); });
+    // Toutes les sections sont observées : sur une section absente du menu, aucun lien n'est souligné
+    document.querySelectorAll('main > section, main > header').forEach(function (el) { spy.observe(el); });
   }
+
+  // Aperçu de l'application : onglets accessibles (flèches, Début, Fin) et boutons précédent / suivant
+  document.querySelectorAll('[data-ftabs]').forEach(function (root) {
+    var tabs = Array.prototype.slice.call(root.querySelectorAll('[role="tab"]'));
+    var panels = tabs.map(function (t) { return document.getElementById(t.getAttribute('aria-controls')); });
+    var list = root.querySelector('[role="tablist"]');
+    var current = 0;
+    root.classList.add('is-ready');
+
+    function show(next, focus) {
+      next = (next + tabs.length) % tabs.length;
+      if (next !== current) {
+        var forward = next > current;
+        var old = panels[current], neu = panels[next];
+        // Glissement vers la gauche quand on avance, vers la droite quand on recule
+        root.style.setProperty('--from', forward ? '40px' : '-40px');
+        root.style.setProperty('--to', forward ? '-40px' : '40px');
+        // Place d'abord le nouveau panneau du bon côté, sans animation, avant de le faire glisser
+        // (« important » : l'emporte aussi sur la règle des animations réduites)
+        neu.style.setProperty('transition', 'none', 'important');
+        void neu.offsetWidth;
+        neu.style.removeProperty('transition');
+        old.classList.add('is-leaving');
+        old.classList.remove('is-active');
+        old.setAttribute('aria-hidden', 'true');
+        old.setAttribute('inert', '');
+        setTimeout(function () { old.classList.remove('is-leaving'); }, 360);
+        neu.classList.add('is-active');
+        neu.removeAttribute('aria-hidden');
+        neu.removeAttribute('inert');
+        tabs.forEach(function (t, i) {
+          t.setAttribute('aria-selected', String(i === next));
+          t.tabIndex = i === next ? 0 : -1;
+        });
+        current = next;
+        // Sur mobile, garde l'onglet actif visible dans la barre défilante, sans faire défiler la page
+        var t = tabs[next];
+        if (list.scrollWidth > list.clientWidth) {
+          list.scrollTo({ left: t.offsetLeft - (list.clientWidth - t.offsetWidth) / 2, behavior: 'smooth' });
+        }
+      }
+      if (focus) tabs[next].focus();
+    }
+
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { show(i, false); });
+      t.addEventListener('keydown', function (e) {
+        var k = e.key;
+        if (k === 'ArrowRight') { e.preventDefault(); show(current + 1, true); }
+        else if (k === 'ArrowLeft') { e.preventDefault(); show(current - 1, true); }
+        else if (k === 'Home') { e.preventDefault(); show(0, true); }
+        else if (k === 'End') { e.preventDefault(); show(tabs.length - 1, true); }
+      });
+    });
+    var prev = root.querySelector('[data-ftabs-prev]');
+    var nextBtn = root.querySelector('[data-ftabs-next]');
+    if (prev) prev.addEventListener('click', function () { show(current - 1, false); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { show(current + 1, false); });
+
+    // Mobile : glisser du doigt vers la gauche ou la droite sur l'écran affiché
+    var zone = root.querySelector('.ftabs-panels');
+    var x0 = null, y0 = 0;
+    zone.addEventListener('touchstart', function (e) {
+      if (e.touches.length !== 1) { x0 = null; return; }
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY;
+    }, { passive: true });
+    zone.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+      x0 = null;
+      // Geste nettement horizontal d'au moins 50 px ; un défilement vertical de la page est ignoré
+      if (Math.abs(dx) < 50 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      show(current + (dx < 0 ? 1 : -1), false);
+    }, { passive: true });
+  });
 
   // Menu mobile
   var toggle = document.querySelector('.nav-toggle');
