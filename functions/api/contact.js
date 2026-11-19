@@ -34,7 +34,8 @@ export async function onRequestPost({ request, env }) {
   try { data = await request.json(); } catch { return json({ error: 'Requête invalide.' }, 400); }
 
   // Robots : champ piège rempli, ou formulaire envoyé en moins de 3 secondes. On répond « OK » sans rien envoyer.
-  if ((data.site_web && String(data.site_web).trim()) || Number(data.delai) < 3) return json({ ok: true });
+  // Sans « delai » (ou avec une valeur non numérique), la requête ne vient pas du formulaire : robot.
+  if ((data.site_web && String(data.site_web).trim()) || !(Number(data.delai) >= 3)) return json({ ok: true });
 
   const f = {
     nom: clean(data.nom, LIMITS.nom),

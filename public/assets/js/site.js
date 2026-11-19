@@ -170,6 +170,10 @@
     };
     toggle.addEventListener('click', function () { setOpen(!menu.classList.contains('open')); });
     menu.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', function () { setOpen(false); }); });
+    // Échap ferme le menu et rend le focus au bouton
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && menu.classList.contains('open')) { setOpen(false); toggle.focus(); }
+    });
   }
 
   // Formulaire de contact
@@ -185,6 +189,10 @@
     status.className = 'form-status err';
   }
 
+  form.addEventListener('input', function (e) {
+    if (e.target.getAttribute('aria-invalid') && e.target.value.trim()) e.target.removeAttribute('aria-invalid');
+  });
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     status.className = 'form-status';
@@ -194,13 +202,22 @@
     new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
     data.delai = Math.round((Date.now() - openedAt) / 1000);
 
-    if (!data.nom || !data.etablissement || !data.email) {
+    // Champs obligatoires : chaque champ vide est signalé, le focus va sur le premier
+    form.querySelectorAll('[aria-invalid]').forEach(function (el) { el.removeAttribute('aria-invalid'); });
+    var manquants = [['nom', '#f-nom'], ['etablissement', '#f-etab'], ['email', '#f-email']]
+      .filter(function (c) { return !data[c[0]]; })
+      .map(function (c) { return form.querySelector(c[1]); });
+    if (manquants.length) {
+      manquants.forEach(function (el) { el.setAttribute('aria-invalid', 'true'); });
       showError('Merci de renseigner votre nom, votre établissement et votre e-mail.');
+      manquants[0].focus();
       return;
     }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email)) {
+      var em = form.querySelector('#f-email');
+      em.setAttribute('aria-invalid', 'true');
       showError("L'adresse e-mail ne semble pas valide.");
-      form.querySelector('#f-email').focus();
+      em.focus();
       return;
     }
 
