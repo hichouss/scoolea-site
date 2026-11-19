@@ -256,7 +256,7 @@ p { margin: 0; }
 }
 .paper img { display: block; width: 100%; height: auto; }
 .paper::after {
-  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 90px;
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 48px;
   background: linear-gradient(rgba(255, 255, 255, 0), #fff);
 }
 
@@ -293,8 +293,12 @@ p { margin: 0; }
 .fpanel-text .check-list { margin-top: 22px; }
 .fpanel-text .check-list svg { color: var(--brand); }
 .fpanel-media .browser, .fpanel-media .paper { margin: 0; }
-/* La feuille prend le même format que les captures d'écran */
-.fpanel-media .paper { max-height: none; width: 64%; aspect-ratio: 1 / 1; margin: 0 auto; padding: 20px 20px 0; }
+/* La feuille est affichée comme un PDF ouvert dans le navigateur : même cadre et même format (16/10) que les captures */
+.pdf-view { aspect-ratio: 1.6 / 1; overflow: hidden; background: #e9edf2; padding: 18px 0 0; }
+.browser .pdf-view img {
+  display: block; width: 78%; height: auto; margin: 0 auto; background: #fff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, .12);
+}
 
 /* Avec JavaScript : panneaux superposés ; la zone garde la hauteur du plus grand, la page ne saute pas */
 .ftabs.is-ready .ftabs-panels { display: grid; touch-action: pan-y; }
@@ -319,7 +323,8 @@ p { margin: 0; }
   .ftab::after { left: 4px; right: 4px; }
   .fpanel-text h3 { font-size: 21px; }
   .fpanel-text > p { font-size: 15px; }
-  .fpanel-media .paper { width: 82%; padding: 12px 12px 0; }
+  .pdf-view { padding-top: 10px; }
+  .browser .pdf-view img { width: 84%; }
 }
 /* Animations réduites : le glissement est conservé mais plus court (16 px) */
 @media (prefers-reduced-motion: reduce) {
